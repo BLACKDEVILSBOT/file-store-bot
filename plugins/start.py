@@ -16,7 +16,7 @@ from database.sql import add_user, query_msg
 
 
 
-WAIT_MSG = """"<b>Processing ...</b>"""
+WAIT_MSG = """"<b>© Mᴏᴠɪᴇ Hᴜᴛ Gʀᴏᴜᴘ</b>"""
 
 REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
 
@@ -92,12 +92,10 @@ async def start_command(client: Client, message: Message):
         return
     else:
         reply_markup = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("About Me", callback_data = "about"),
-                    InlineKeyboardButton("Close", callback_data = "close")
-                ]
-            ]
+            [[
+                    InlineKeyboardButton("Group", url= "https://t.me/Movie_hut_group"),
+                    InlineKeyboardButton("Channel", url= "https://t.me/Movie_hut_Malayalam")
+            ]]
         )
         await message.reply_text(
             text = START_MSG.format(
